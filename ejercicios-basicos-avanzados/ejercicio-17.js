@@ -1,8 +1,8 @@
-For...in: Usa un for...in para imprimir por consola los datos del alienígena.
+/* For...in: Usa un for...in para imprimir por consola los datos del alienígena.
 
 Debería tener este formato cada uno de los console.log: "La propiedad ____ tiene cómo valor: ____"
 
-Puedes usar este objeto:
+Puedes usar este objeto: */
 
 const alien = {
     name: 'Xenomorph',
@@ -10,3 +10,7 @@ const alien = {
     origin: 'Unknown',
     weight: 180
 };
+
+for(const key in alien){
+    console.log("La propiedad " + key + " tiene como valor: " + alien[key])
+}
