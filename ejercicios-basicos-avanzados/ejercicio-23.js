@@ -1,8 +1,8 @@
-Usa un bucle para crear 3 arrays de películas filtrados por categorías.
+/* Usa un bucle para crear 3 arrays de películas filtrados por categorías.
 
 Pelicula pequeña -> menos de 100 minutos, película mediana -> más de 100 minutos y menos de 200 y pelicula grande -> más de 200 minutos.
 
-Imprime cada array por consola.
+Imprime cada array por consola. */
 
 const movies = [
   { name: "Titan A.E.", durationInMinutes: 130 },
@@ -16,3 +16,26 @@ const movies = [
   { name: "Amélie", durationInMinutes: 110 },
   { name: "Eternal Sunshine of the Spotless Mind", durationInMinutes: 108 },
 ];
+
+let movieP = [];
+let movieM = [];
+let movieL = [];
+
+for( const duration of movies){
+  if (duration.durationInMinutes < 100){
+    movieP.push(duration);
+   
+  } 
+  if (duration.durationInMinutes >= 100 && duration.durationInMinutes < 200){
+    movieM.push(duration);
+   
+  } 
+  if (duration.durationInMinutes >= 200){
+    movieL.push(duration);
+   
+  }
+}
+ 
+console.log("Peliculas Cortas (-100 min)", movieP);
+console.log("Peliculas Medianas (+100, -200 min)", movieM);
+console.log("Peliculas Largas (+200 min)", movieL);
