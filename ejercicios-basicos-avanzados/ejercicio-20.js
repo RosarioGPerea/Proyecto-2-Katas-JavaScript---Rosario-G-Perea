@@ -1,8 +1,8 @@
-For...of avanzado: Usa un bucle for...of para recorrer todos los juguetes y añade los que tengan más de 15 ventas (sellCount) al array popularToys.
+/* For...of avanzado: Usa un bucle for...of para recorrer todos los juguetes y añade los que tengan más de 15 ventas (sellCount) al array popularToys.
 
 Imprímelo por consola.
 
-Puedes usar este array:
+Puedes usar este array: */
 
 const popularToys = []
 
@@ -18,3 +18,12 @@ const toys = [
     {id: 109, name: 'Magic 8-Ball', sellCount: 38},
     {id: 110, name: 'Troll Doll', sellCount: 20}
 ];
+
+for (const count of toys) {
+    if (count.sellCount > 15) {
+        popularToys.push(count);
+    }
+}
+console.log(popularToys);
+
+//noMEPuedoCreerQueLoHeHechoALaPrimera

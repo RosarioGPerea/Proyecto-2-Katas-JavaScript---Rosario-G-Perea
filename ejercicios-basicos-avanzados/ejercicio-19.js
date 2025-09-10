@@ -15,10 +15,10 @@ const toys = [
 ];
 
 const newPlacesToTravel = [];
-const removePlaces = 'gato';
+
 
 for (const place of toys) {
-  if (!removePlaces.includes(place.value)) {
+  if (!place.name.includes("gato")) {
     newPlacesToTravel.push(place);
   }
 }
