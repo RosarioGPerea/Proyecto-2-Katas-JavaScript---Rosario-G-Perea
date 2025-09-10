@@ -1,7 +1,7 @@
-Utiliza un bucle para encontrar la serie de dibujos animados más antigua en el array y guarda su nombre en una variable.
+/* Utiliza un bucle para encontrar la serie de dibujos animados más antigua en el array y guarda su nombre en una variable.
 
 Imprime el nombre por consola.
-
+ */
 const cartoons = [
   { name: 'Bugs Bunny', debut: 1938 },
   { name: 'SpongeBob SquarePants', debut: 1999 },
@@ -14,5 +14,15 @@ const cartoons = [
   { name: 'Pokémon', debut: 1997 },
   { name: "Dexter's Laboratory", debut: 1996 }
 ];
+ let oldCartoon = [];
+ let counter = 0;
 
+ for (const old of cartoons) {
+  if( old.debut < Number.MAX_VALUE){
+    counter++;
+    oldCartoon.push(old);
+  }
+ }
+
+ console.log("La peli mas vieja", oldCartoon);
 // Añade tu código de bucle aquí
