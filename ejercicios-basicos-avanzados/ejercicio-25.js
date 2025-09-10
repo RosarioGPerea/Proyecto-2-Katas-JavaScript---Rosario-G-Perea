@@ -1,18 +1,35 @@
-Utiliza un bucle para filtrar personajes de Star Wars por la especie "Human" y guárdalos en un nuevo array llamado humanCharacters.
+/* Dada una lista de películas, cuenta cuántas son de antes del año 2000 y cuántas son posteriores, utilizando un bucle.
 
-Imprime este nuevo array por consola.
+Imprime ambos conteos por consola. */
 
-const characters = [
-  { name: 'Luke Skywalker', species: 'Human' },
-  { name: 'Darth Vader', species: 'Human' },
-  { name: 'Chewbacca', species: 'Wookiee' },
-  { name: 'Leia Organa', species: 'Human' },
-  { name: 'R2-D2', species: 'Droid' },
-  { name: 'C-3PO', species: 'Droid' },
-  { name: 'Obi-Wan Kenobi', species: 'Human' },
-  { name: 'Yoda', species: 'Unknown' },
-  { name: 'Han Solo', species: 'Human' }
+const movies = [
+  { title: 'The Matrix', releaseYear: 1999 },
+  { title: 'Star Wars: Episode IV – A New Hope', releaseYear: 1977 },
+  { title: 'Inception', releaseYear: 2010 },
+  { title: 'Jurassic Park', releaseYear: 1993 },
+  { title: 'The Shawshank Redemption', releaseYear: 1994 },
+  { title: 'Pulp Fiction', releaseYear: 1994 },
+  { title: 'Avatar', releaseYear: 2009 },
+  { title: 'The Dark Knight', releaseYear: 2008 },
+  { title: 'Fight Club', releaseYear: 1999 },
+  { title: 'Forrest Gump', releaseYear: 1994 }
 ];
-const humanCharacters = [];
 
-// Añade tu código de bucle aquí
+let beforeYear = [];
+let afterYear = [];
+
+let countBefore = 0;
+let countAfter = 0;
+
+for (const movie of movies) {
+  if (movie.releaseYear < 2000) {
+    countBefore++;
+    beforeYear.push(movie);
+  } else {
+    countAfter++;
+    afterYear.push(movie);
+  }
+}
+
+console.log("Movies before 2000's:", countBefore, beforeYear);
+console.log("Movies after 2000's:", countAfter, afterYear);
