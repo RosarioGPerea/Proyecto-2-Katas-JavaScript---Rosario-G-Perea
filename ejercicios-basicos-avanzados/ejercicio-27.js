@@ -14,15 +14,12 @@ const cartoons = [
   { name: 'Pokémon', debut: 1997 },
   { name: "Dexter's Laboratory", debut: 1996 }
 ];
- let oldCartoon = [];
- let counter = 0;
+ let oldCartoon = cartoons[0];
 
  for (const old of cartoons) {
-  if( old.debut < Number.MAX_VALUE){
-    counter++;
-    oldCartoon.push(old);
+  if(old.debut < oldCartoon){
+    oldCartoon = cartoon;
   }
  }
 
- console.log("La peli mas vieja", oldCartoon);
-// Añade tu código de bucle aquí
+ console.log("La peli mas vieja: ", oldCartoon);
