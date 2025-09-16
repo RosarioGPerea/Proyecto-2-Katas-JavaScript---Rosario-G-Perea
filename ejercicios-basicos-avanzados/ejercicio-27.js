@@ -14,12 +14,13 @@ const cartoons = [
   { name: 'Pokémon', debut: 1997 },
   { name: "Dexter's Laboratory", debut: 1996 }
 ];
- let oldCartoon = cartoons[0];
 
- for (const old of cartoons) {
-  if(old.debut < oldCartoon){
-    oldCartoon = cartoon;
+let oldest = cartoons[0];
+
+ for (let i = 1; i < cartoons.length; i++) {
+  if (cartoons[i].debut < oldest.debut) {
+    oldest = cartoons[i];
   }
  }
 
- console.log("La peli mas vieja: ", oldCartoon);
+console.log(oldest.name, oldest.debut);
