@@ -1,4 +1,4 @@
-Dada una lista de álbumes de música, utiliza un bucle para sumar todas las duraciones solo de los álbumes de rock y luego imprime el total de estas duraciones por consola.
+/* Dada una lista de álbumes de música, utiliza un bucle para sumar todas las duraciones solo de los álbumes de rock y luego imprime el total de estas duraciones por consola. */
 
 const albums = [
   { title: 'Led Zeppelin IV', genre: 'Rock', duration: 42.19 },
@@ -13,4 +13,11 @@ const albums = [
   { title: 'The Joshua Tree', genre: 'Rock', duration: 50.11 }
 ];
 
-// Añade tu código de bucle aquí
+let duracionTotal = 0;
+
+for (let i = 0; i < albums.length; i++) {
+  if (albums[i].genre === 'Rock') {
+    duracionTotal += albums[i].duration;
+  }
+}
+console.log("Duración total: ", duracionTotal);
