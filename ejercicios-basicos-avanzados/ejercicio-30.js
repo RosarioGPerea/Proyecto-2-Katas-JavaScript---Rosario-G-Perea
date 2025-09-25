@@ -1,6 +1,6 @@
-Dada una lista de canciones, clasifícalas en un objeto donde las claves sean los géneros y los valores sean arrays de canciones de ese género.
+/* Dada una lista de canciones, clasifícalas en un objeto donde las claves sean los géneros y los valores sean arrays de canciones de ese género.
 
-Utiliza bucles para estructurar este objeto e imprime el resultado por consola.
+Utiliza bucles para estructurar este objeto e imprime el resultado por consola. */
 
 const tracks = [
   { title: 'Enter Sandman', genre: 'Metal' },
@@ -15,4 +15,13 @@ const tracks = [
   { title: 'Stairway to Heaven', genre: 'Rock' }
 ];
 
+const tracksClasification = {};
+
+for (const track of tracks) {
+  if (track.genre === track.genre){
+    tracksClasification[genre] = [];
+  }
+  tracksClasification[genre].push(track);
+}
+console.log(tracksClasification)
 // Añade tu código de bucle aquí

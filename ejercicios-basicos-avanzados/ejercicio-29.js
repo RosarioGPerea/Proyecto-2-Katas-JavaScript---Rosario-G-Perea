@@ -16,14 +16,13 @@ const starWarsMovies = [
   { title: 'Solo', releaseYear: 2018 }
 ];
 
-const moviesByDecade = {};
+const peliculasPorDecada = {};
 
-for (let i = 0; i < starWarsMovies.length; i++) {
-  const movie = starWarsMovies[i];
-  const decade = Math.floor(movie.releaseYear / 10) * 10;
-  if (!moviesByDecade[decade]) {
-    moviesByDecade[decade] = [];
+for (const movie of starWarsMovies) {
+  const decada = Math.floor(movie.releaseYear / 10) * 10;
+  if (!peliculasPorDecada[decada]) {
+    peliculasPorDecada[decada] = [];
   }
-  moviesByDecade[decade].push(movie);
+  peliculasPorDecada[decada].push(movie);
 }
-console.log(moviesByDecade);
+console.log(peliculasPorDecada);
