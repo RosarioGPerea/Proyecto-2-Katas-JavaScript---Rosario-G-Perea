@@ -1,10 +1,10 @@
-Dado el siguiente código usa forof para recorrer el array de películas, genera un nuevo array con las categorías de las películas e imprime por consola el array de categorías.
+/* Dado el siguiente código usa forof para recorrer el array de películas, genera un nuevo array con las categorías de las películas e imprime por consola el array de categorías.
 
 Ten en cuenta que las categorías no tienen que repetirse.
 
 Es decir, const categorias = ["comedia", "aventura", "acción", "thriller", "animación"]
 
-Para filtrar las categorías puedes ayudarte de la función .includes().
+Para filtrar las categorías puedes ayudarte de la función .includes(). */
 
 const movies = [
   {
@@ -28,3 +28,17 @@ const movies = [
     categories: ["comedia", "aventura", "animación"],
   },
 ];
+
+function getCategories(movies) {
+  let categorias = [];
+  for (let pelicula of movies) {
+    for (let category of pelicula.categories) {
+      if (!categorias.includes(category)) {
+        categorias.push(category);
+      }
+    }
+  }
+  return categorias;
+}
+
+console.log(getCategories(movies));

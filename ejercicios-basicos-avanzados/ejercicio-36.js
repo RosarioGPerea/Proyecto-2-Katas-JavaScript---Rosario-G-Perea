@@ -1,6 +1,6 @@
-Crea una función que, dada una lista de actores con su año de nacimiento, calcule su edad actual y retorne un nuevo array con los nombres de los actores y sus edades.
+/* Crea una función que, dada una lista de actores con su año de nacimiento, calcule su edad actual y retorne un nuevo array con los nombres de los actores y sus edades.
 
-Averigua como hallar el año actual en tus cálculos.
+Averigua como hallar el año actual en tus cálculos. */
 
 const actors = [
   { name: 'Leonardo DiCaprio', born: 1974 },
@@ -15,6 +15,16 @@ const actors = [
   { name: 'Cate Blanchett', born: 1969 }
 ];
 
+
 function calculateActorsAges(actors) {
-  // insert code
+  var añoActual = new Date().getFullYear();
+  var edadActual = [];
+  for (let i = 0; i < actors.length; i++) {
+    let age = añoActual - actors[i].born;
+    edadActual.push({ name: actors[i].name, age: age });
+  }
+  return edadActual;
 }
+
+console.log(calculateActorsAges(actors));
+

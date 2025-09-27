@@ -1,30 +1,53 @@
-Dado el siguiente código usa forof para recorrer el array de películas, genera un nuevo array con las categorías de las películas e imprime por consola el array de categorías.
+/* Dado el siguiente código usa forof y forin para hacer la media del volumen de
+todos los sonidos favoritos que tienen los usuarios.
+Es decir, la media de volumen de todos los volumenes juntos. */
 
-Ten en cuenta que las categorías no tienen que repetirse.
-
-Es decir, const categorias = ["comedia", "aventura", "acción", "thriller", "animación"]
-
-Para filtrar las categorías puedes ayudarte de la función .includes().
-
-const movies = [
-  {
-    title: "Bracula: Condemor II",
-    duration: 192,
-    categories: ["comedia", "aventura"],
-  },
-  {
-    title: "Spider-Man: No Way Home",
-    duration: 122,
-    categories: ["aventura", "acción"],
-  },
-  {
-    title: "The Voices",
-    duration: 223,
-    categories: ["comedia", "thriller"],
-  },
-  {
-    title: "Shrek",
-    duration: 111,
-    categories: ["comedia", "aventura", "animación"],
-  },
+const users = [
+{
+name: "Alberto",
+favoritesSounds: {
+waves: { format: "mp3", volume: 50 },
+rain: { format: "ogg", volume: 60 },
+firecamp: { format: "mp3", volume: 80 },
+},
+},
+{
+name: "Antonio",
+favoritesSounds: {
+waves: { format: "mp3", volume: 30 },
+shower: { format: "ogg", volume: 55 },
+train: { format: "mp3", volume: 60 },
+},
+},
+{
+name: "Santiago",
+favoritesSounds: {
+shower: { format: "mp3", volume: 50 },
+train: { format: "ogg", volume: 60 },
+firecamp: { format: "mp3", volume: 80 },
+},
+},
+{
+name: "Laura",
+favoritesSounds: {
+waves: { format: "mp3", volume: 67 },
+wind: { format: "ogg", volume: 35 },
+firecamp: { format: "mp3", volume: 60 },
+},
+},
 ];
+
+function promedioVolumen(users) {
+  let suma = 0;
+  let sumaTotal = 0;
+
+  for (let user of users) {
+    for (let sound in user.favoritesSounds) {
+      suma += user.favoritesSounds[sound].volume;
+      sumaTotal++;
+    }
+  }
+  return suma / sumaTotal;
+}
+
+console.log(promedioVolumen(users));

@@ -1,6 +1,6 @@
-Desarrolla una función que busque en un array de objetos representando mutantes si existe alguno con un poder específico y retorne un mensaje indicando si fue encontrado o no.
+/* Desarrolla una función que busque en un array de objetos representando mutantes si existe alguno con un poder específico y retorne un mensaje indicando si fue encontrado o no.
 
-Considera el caso de múltiples mutantes con el mismo poder.
+Considera el caso de múltiples mutantes con el mismo poder. */
 
 const mutants = [
   { name: 'Wolverine', power: 'regeneration' },
@@ -16,5 +16,13 @@ const mutants = [
 ];
 
 function findMutantByPower(mutants, power) {
-  // insert code
+  for (let i = 0; i < mutants.length; i++) {
+    if (mutants[i].power === power) {
+      return "El poder de " + power + " lo tiene " + mutants[i].name;
+    }
+  }
+  return "No hay mutantes con este poder: " + power;
 }
+
+console.log(findMutantByPower(mutants, "teleportation")); 
+console.log(findMutantByPower(mutants, "Super Sayan"));
