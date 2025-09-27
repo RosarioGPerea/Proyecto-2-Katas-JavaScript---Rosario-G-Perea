@@ -1,6 +1,6 @@
-Crea una función que reciba un array de objetos representando a varios miembros de los X-Men y su año de aparición. La función debe retornar el miembro más antiguo.
+/* Crea una función que reciba un array de objetos representando a varios miembros de los X-Men y su año de aparición. La función debe retornar el miembro más antiguo.
 
-Utiliza este array para probar tu función.
+Utiliza este array para probar tu función. */
 
 const xMen = [
   { name: 'Wolverine', year: 1974 },
@@ -16,5 +16,15 @@ const xMen = [
 ];
 
 function findOldestXMen(xMen) {
-  // insert code
+  let oldestXMen = xMen[0];
+   for (let i = 1; i < xMen.length; i++) {
+    if (xMen[i].year < oldestXMen.year) {
+      oldestXMen = xMen[i]; 
+    }
+   }
+   return oldestXMen;
 }
+
+findOldestXMen(xMen);
+
+console.log(findOldestXMen(xMen));

@@ -8,7 +8,7 @@ Puedes usar este array para probar tu función: */
 
 
 function repeatCounter(list) {
-  const counter = {};  //contenedor vacío donde meter los "item" de la lista.
+  const counter = {}; 
   for (const item of list) {
     counter[item] = (counter[item] || 0) + 1;
   }
