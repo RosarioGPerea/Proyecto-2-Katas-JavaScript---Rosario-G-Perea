@@ -12,6 +12,11 @@ console.log(ul);
 
 /* 1.2 Elimina el elemento que tenga la clase .fn-remove-me. */
 
+const elementoEliminar = document.querySelector(".fn-remove-me");
+if (elementoEliminar) {
+  elementoEliminar.remove();
+}
+
 /* 1.3 Utiliza el array para crear dinamicamente una lista ul > li de elementos
 en el div de html con el atributo data-function="printHere". */
 const cars = ["Mazda 6", "Ford fiesta", "Audi A4", "Toyota corola"];
