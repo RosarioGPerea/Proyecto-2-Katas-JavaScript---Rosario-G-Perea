@@ -1,7 +1,5 @@
-7.1 Dado el siguiente javascript filtra los videojuegos por gender = 'RPG' usando
-.filter() y usa .reduce() para conseguir la media de sus .score.
-La función .find() también podría ayudarte para el contrar el genero 'RPG' en el
-array .gender.
+/*7.1 Dado el siguiente javascript filtra los videojuegos por gender = 'RPG' usando .filter() y usa .reduce() para conseguir la media de sus .score.
+La función .find() también podría ayudarte para el contrar el genero 'RPG' en el array .gender.*/
 
 const videogames = [
     {name: 'Final Fantasy VII', genders: ['RPG'], score: 9.5},
@@ -11,3 +9,14 @@ const videogames = [
     {name: 'Genshin Impact', genders: ['RPG', 'Aventura'], score: 7.5},
     {name: 'Legend of Zelda: Breath of the wild', genders: ['RPG'], score: 10},
 ]
+
+const rpgGames = videogames.filter(game => game.genders.includes('RPG'));
+const averageRpgScore = rpgGames.reduce((accumulator, game, index, array) => {
+    accumulator += game.score;
+    if (index === array.length - 1) {
+        return accumulator / array.length;
+    } else {
+        return accumulator;
+    }
+}, 0);
+console.log("7.1 - Media de puntuación de juegos RPG:", averageRpgScore);
