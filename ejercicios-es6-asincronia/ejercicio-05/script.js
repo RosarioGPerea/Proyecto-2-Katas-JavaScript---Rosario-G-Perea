@@ -22,4 +22,4 @@ inputFilter.addEventListener('input', (event) => {
     });
 
     console.log("Coincidencias:", filteredStreamers);
-});
+}); 
